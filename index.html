@@ -3,328 +3,82 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Sales Research Pro Checkout</title>
-
-  <!-- Paddle.js -->
+  <title>Sales Research Pro</title>
   <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Arial, sans-serif;
-
-      background: #f5f7fb;
-      color: #172033;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 680px;
-    }
-
-    .card {
-      background: #ffffff;
-      border: 1px solid #e4e7ec;
-      border-radius: 18px;
-      padding: 40px 32px;
-      text-align: center;
-
-      box-shadow:
-        0 20px 50px rgba(15, 23, 42, 0.08);
-    }
-
-    .logo {
-      width: 54px;
-      height: 54px;
-
-      margin: 0 auto 18px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 14px;
-
-      background: #1677ff;
-      color: white;
-
-      font-size: 26px;
-      font-weight: 800;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 28px;
-      font-weight: 800;
-    }
-
-    .subtitle {
-      margin-top: 8px;
-      color: #667085;
-      font-size: 15px;
-    }
-
-    .production {
-      display: inline-block;
-
-      margin-top: 20px;
-
-      padding: 7px 12px;
-
-      border-radius: 999px;
-
-      background: #ecfdf3;
-      color: #067647;
-
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    #status {
-      margin-top: 26px;
-
-      padding: 15px;
-
-      border-radius: 10px;
-
-      background: #f8fafc;
-
-      font-size: 14px;
-      line-height: 1.5;
-
-      color: #475467;
-    }
-
-    #status.error {
-      background: #fef3f2;
-      color: #b42318;
-    }
-
-    #status.success {
-      background: #ecfdf3;
-      color: #067647;
-    }
-
-    .security {
-      margin-top: 24px;
-
-      font-size: 12px;
-      color: #98a2b3;
-    }
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f5f7fb;color:#172033}
+    .container{width:100%;max-width:980px;margin:0 auto;padding:40px 24px}.card{background:#fff;border:1px solid #e4e7ec;border-radius:18px;padding:40px 32px;text-align:center;box-shadow:0 20px 50px rgba(15,23,42,.08)}
+    .logo{width:54px;height:54px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:#1677ff;color:#fff;font-size:26px;font-weight:800}
+    h1{margin:0;font-size:30px;font-weight:800}.subtitle{margin:8px auto 0;color:#667085;font-size:15px;max-width:650px}.production{display:inline-block;margin-top:20px;padding:7px 12px;border-radius:999px;background:#ecfdf3;color:#067647;font-size:12px;font-weight:700}
+    #status{margin:26px auto 0;padding:15px;border-radius:10px;background:#f8fafc;font-size:14px;line-height:1.5;color:#475467;max-width:680px}#status.error{background:#fef3f2;color:#b42318}#status.success{background:#ecfdf3;color:#067647}
+    .about{margin-top:28px;text-align:left;padding-top:28px;border-top:1px solid #e4e7ec}.about h2{text-align:center;margin:0 0 10px}.about p{color:#667085;text-align:center;margin:0 auto;max-width:720px;line-height:1.65}
+    .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}.plan{border:1px solid #e4e7ec;border-radius:14px;padding:20px;text-align:left}.plan strong{font-size:18px}.price{font-size:24px;font-weight:800;margin:8px 0}.plan span{color:#667085;font-size:14px}
+    .security{margin-top:24px;font-size:12px;color:#98a2b3}.footer{margin-top:28px;padding-top:20px;border-top:1px solid #e4e7ec;color:#667085;font-size:12px;line-height:1.8}.footer a{color:#1677ff;margin:0 7px}.footer p{margin:8px 0 0}
+    @media(max-width:720px){.plans{grid-template-columns:1fr}.card{padding:28px 20px}.container{padding:22px 14px}}
   </style>
 </head>
-
 <body>
+<div class="container"><div class="card">
+  <div class="logo">SR</div><h1>Sales Research Pro</h1>
+  <div class="subtitle">Research marketplace sales activity faster with structured sold-item analysis, purchase-history checks and exportable results.</div>
+  <div class="production">SECURE PAYMENT</div>
+  <div id="status">Preparing secure checkout...</div>
 
-  <div class="container">
-
-    <div class="card">
-
-      <div class="logo">SR</div>
-
-      <h1>Sales Research Pro</h1>
-
-      <div class="subtitle">
-        Secure subscription checkout
-      </div>
-
-      <div class="production">
-        SECURE PAYMENT
-      </div>
-
-      <div id="status">
-        Preparing secure checkout...
-      </div>
-
-      <div class="security">
-        Payments are securely processed by Paddle.
-      </div>
-
+  <section class="about" id="product-info">
+    <h2>Plans</h2>
+    <p>Sales Research Pro is a research tool for marketplace sellers. Choose a monthly plan based on the number of scans you need.</p>
+    <div class="plans">
+      <div class="plan"><strong>Starter</strong><div class="price">$9.99 <span>/ month</span></div><span>50 scans per billing period</span></div>
+      <div class="plan"><strong>Pro</strong><div class="price">$19.99 <span>/ month</span></div><span>500 scans per billing period</span></div>
+      <div class="plan"><strong>Business</strong><div class="price">$39.99 <span>/ month</span></div><span>2,000 scans per billing period</span></div>
     </div>
+  </section>
 
-  </div>
+  <div class="security">Payments are securely processed by Paddle, our Merchant of Record.</div>
+  <footer class="footer">
+    <a href="./terms/">Terms of Service</a> •
+    <a href="./privacy/">Privacy Policy</a> •
+    <a href="./refund/">Refund Policy</a>
+    <p>Sales Research Pro is operated by Andaç Taşdemir · Support: <a href="mailto:support@salesresearchpro.com">support@salesresearchpro.com</a></p>
+  </footer>
+</div></div>
 
-  <script>
-    (async function () {
-
-      const status =
-        document.getElementById("status");
-
-      function showError(message) {
-        status.className = "error";
-        status.textContent = message;
-      }
-
-      function showSuccess(message) {
-        status.className = "success";
-        status.textContent = message;
-      }
-
-      try {
-
-        /*
-         * -------------------------------------------------------
-         * 1. Initialize Paddle LIVE
-         * -------------------------------------------------------
-         *
-         * Production is Paddle.js default environment.
-         * DO NOT call Paddle.Environment.set("sandbox") here.
-         *
-         * This is a CLIENT-SIDE Paddle token.
-         * It is safe to use in frontend code.
-         *
-         * Never put PADDLE_API_KEY or webhook secret here.
-         */
-
-        Paddle.Initialize({
-
-          token: "live_8c5025fea9a82b27646ea5afe92",
-
-          eventCallback: function(event) {
-
-            console.log("Paddle event:", event);
-
-            if (
-              event &&
-              event.name === "checkout.completed"
-            ) {
-
-              showSuccess(
-                "Payment completed successfully. " +
-                "You can return to Sales Research Pro and press Refresh."
-              );
-
-            }
-
-            if (
-              event &&
-              event.name === "checkout.closed"
-            ) {
-
-              status.className = "";
-
-              status.textContent =
-                "Checkout closed. You can return to the extension or try again.";
-
-            }
-
-          }
-
-        });
-
-
-        /*
-         * -------------------------------------------------------
-         * 2. Read Paddle transaction ID
-         * -------------------------------------------------------
-         *
-         * Paddle opens the payment link like:
-         *
-         * https://.../sales-research-checkout/?_ptxn=txn_xxxxx
-         */
-
-        const params =
-          new URLSearchParams(
-            window.location.search
-          );
-
-        const transactionId =
-          params.get("_ptxn");
-
-
-        /*
-         * If this page was opened directly,
-         * do not attempt to open Paddle checkout.
-         */
-
-        if (!transactionId) {
-
-          status.textContent =
-            "Checkout page is ready. " +
-            "Please start a purchase from the Sales Research Pro extension.";
-
-          return;
-
+<script>
+(async function () {
+  const status = document.getElementById("status");
+  function showError(message){status.className="error";status.textContent=message;}
+  function showSuccess(message){status.className="success";status.textContent=message;}
+  try {
+    Paddle.Initialize({
+      token:"live_8c5025fea9a82b27646ea5afe92",
+      eventCallback:function(event){
+        console.log("Paddle event:",event);
+        if(event && event.name==="checkout.completed"){
+          showSuccess("Payment completed successfully. You can return to Sales Research Pro and press Refresh.");
         }
-
-
-        /*
-         * Basic transaction ID validation.
-         */
-
-        if (
-          !transactionId.startsWith("txn_")
-        ) {
-
-          throw new Error(
-            "Invalid Paddle transaction ID."
-          );
-
+        if(event && event.name==="checkout.closed"){
+          status.className="";
+          status.textContent="Checkout closed. You can return to the extension or try again.";
         }
-
-
-        /*
-         * -------------------------------------------------------
-         * 3. Open Paddle Checkout
-         * -------------------------------------------------------
-         */
-
-        status.textContent =
-          "Opening Paddle secure checkout...";
-
-
-        Paddle.Checkout.open({
-
-          transactionId: transactionId,
-
-          settings: {
-
-            displayMode: "overlay",
-
-            theme: "light",
-
-            locale: "en",
-
-            allowLogout: false
-
-          }
-
-        });
-
-
-        status.textContent =
-          "Complete your payment in the Paddle checkout window.";
-
-
-      } catch (error) {
-
-        console.error(
-          "Sales Research Pro checkout error:",
-          error
-        );
-
-        showError(
-          error && error.message
-            ? error.message
-            : "Unable to open Paddle checkout."
-        );
-
       }
-
-    })();
-  </script>
-
-</body>
-</html>
+    });
+    const params=new URLSearchParams(window.location.search);
+    const transactionId=params.get("_ptxn");
+    if(!transactionId){
+      status.textContent="Checkout page is ready. Please start a purchase from the Sales Research Pro extension.";
+      return;
+    }
+    if(!transactionId.startsWith("txn_")) throw new Error("Invalid Paddle transaction ID.");
+    status.textContent="Opening Paddle secure checkout...";
+    Paddle.Checkout.open({
+      transactionId:transactionId,
+      settings:{displayMode:"overlay",theme:"light",locale:"en",allowLogout:false}
+    });
+    status.textContent="Complete your payment in the Paddle checkout window.";
+  } catch(error) {
+    console.error("Sales Research Pro checkout error:",error);
+    showError(error && error.message ? error.message : "Unable to open Paddle checkout.");
+  }
+})();
+</script>
+</body></html>
