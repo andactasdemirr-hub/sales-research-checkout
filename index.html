@@ -76,7 +76,7 @@
       font-size: 15px;
     }
 
-    .sandbox {
+    .production {
       display: inline-block;
 
       margin-top: 20px;
@@ -85,8 +85,8 @@
 
       border-radius: 999px;
 
-      background: #fff4df;
-      color: #9a5b00;
+      background: #ecfdf3;
+      color: #067647;
 
       font-size: 12px;
       font-weight: 700;
@@ -140,8 +140,8 @@
         Secure subscription checkout
       </div>
 
-      <div class="sandbox">
-        PADDLE SANDBOX · TEST MODE
+      <div class="production">
+        SECURE PAYMENT
       </div>
 
       <div id="status">
@@ -159,7 +159,8 @@
   <script>
     (async function () {
 
-      const status = document.getElementById("status");
+      const status =
+        document.getElementById("status");
 
       function showError(message) {
         status.className = "error";
@@ -175,33 +176,30 @@
 
         /*
          * -------------------------------------------------------
-         * 1. Paddle Sandbox
+         * 1. Initialize Paddle LIVE
          * -------------------------------------------------------
-         */
-
-        Paddle.Environment.set("sandbox");
-
-
-        /*
-         * -------------------------------------------------------
-         * 2. Initialize Paddle
-         * -------------------------------------------------------
+         *
+         * Production is Paddle.js default environment.
+         * DO NOT call Paddle.Environment.set("sandbox") here.
          *
          * This is a CLIENT-SIDE Paddle token.
          * It is safe to use in frontend code.
          *
-         * Never put PADDLE_API_KEY here.
+         * Never put PADDLE_API_KEY or webhook secret here.
          */
 
         Paddle.Initialize({
 
-          token: "test_a5cdb40e31a96771b232629654e",
+          token: "live_8c5025fea9a82b27646ea5afe92",
 
           eventCallback: function(event) {
 
             console.log("Paddle event:", event);
 
-            if (event && event.name === "checkout.completed") {
+            if (
+              event &&
+              event.name === "checkout.completed"
+            ) {
 
               showSuccess(
                 "Payment completed successfully. " +
@@ -210,7 +208,10 @@
 
             }
 
-            if (event && event.name === "checkout.closed") {
+            if (
+              event &&
+              event.name === "checkout.closed"
+            ) {
 
               status.className = "";
 
@@ -226,24 +227,26 @@
 
         /*
          * -------------------------------------------------------
-         * 3. Read Paddle transaction ID
+         * 2. Read Paddle transaction ID
          * -------------------------------------------------------
          *
-         * Paddle opens the Default Payment Link like:
+         * Paddle opens the payment link like:
          *
          * https://.../sales-research-checkout/?_ptxn=txn_xxxxx
          */
 
         const params =
-          new URLSearchParams(window.location.search);
+          new URLSearchParams(
+            window.location.search
+          );
 
         const transactionId =
           params.get("_ptxn");
 
 
         /*
-         * If the page was opened directly without Paddle,
-         * do not attempt to open checkout.
+         * If this page was opened directly,
+         * do not attempt to open Paddle checkout.
          */
 
         if (!transactionId) {
@@ -261,7 +264,9 @@
          * Basic transaction ID validation.
          */
 
-        if (!transactionId.startsWith("txn_")) {
+        if (
+          !transactionId.startsWith("txn_")
+        ) {
 
           throw new Error(
             "Invalid Paddle transaction ID."
@@ -272,7 +277,7 @@
 
         /*
          * -------------------------------------------------------
-         * 4. Open Paddle Checkout
+         * 3. Open Paddle Checkout
          * -------------------------------------------------------
          */
 
@@ -299,12 +304,8 @@
         });
 
 
-        /*
-         * Checkout should now be visible as Paddle overlay.
-         */
-
         status.textContent =
-          "Complete your test payment in the Paddle checkout window.";
+          "Complete your payment in the Paddle checkout window.";
 
 
       } catch (error) {
