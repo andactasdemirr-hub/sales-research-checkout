@@ -1,84 +1,21 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sales Research Pro</title>
-  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-  <style>
-    *{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f5f7fb;color:#172033}
-    .container{width:100%;max-width:980px;margin:0 auto;padding:40px 24px}.card{background:#fff;border:1px solid #e4e7ec;border-radius:18px;padding:40px 32px;text-align:center;box-shadow:0 20px 50px rgba(15,23,42,.08)}
-    .logo{width:54px;height:54px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:#1677ff;color:#fff;font-size:26px;font-weight:800}
-    h1{margin:0;font-size:30px;font-weight:800}.subtitle{margin:8px auto 0;color:#667085;font-size:15px;max-width:650px}.production{display:inline-block;margin-top:20px;padding:7px 12px;border-radius:999px;background:#ecfdf3;color:#067647;font-size:12px;font-weight:700}
-    #status{margin:26px auto 0;padding:15px;border-radius:10px;background:#f8fafc;font-size:14px;line-height:1.5;color:#475467;max-width:680px}#status.error{background:#fef3f2;color:#b42318}#status.success{background:#ecfdf3;color:#067647}
-    .about{margin-top:28px;text-align:left;padding-top:28px;border-top:1px solid #e4e7ec}.about h2{text-align:center;margin:0 0 10px}.about p{color:#667085;text-align:center;margin:0 auto;max-width:720px;line-height:1.65}
-    .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}.plan{border:1px solid #e4e7ec;border-radius:14px;padding:20px;text-align:left}.plan strong{font-size:18px}.price{font-size:24px;font-weight:800;margin:8px 0}.plan span{color:#667085;font-size:14px}
-    .security{margin-top:24px;font-size:12px;color:#98a2b3}.footer{margin-top:28px;padding-top:20px;border-top:1px solid #e4e7ec;color:#667085;font-size:12px;line-height:1.8}.footer a{color:#1677ff;margin:0 7px}.footer p{margin:8px 0 0}
-    @media(max-width:720px){.plans{grid-template-columns:1fr}.card{padding:28px 20px}.container{padding:22px 14px}}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sales Research Pro | Marketplace Product Research</title>
+<meta name="description" content="Sales Research Pro helps online marketplace sellers research public sold-listing activity, review sales history and organize product research faster.">
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f5f7fb;color:#172033;line-height:1.6}.wrap{max-width:1080px;margin:auto;padding:28px 22px 50px}.nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}.brand{display:flex;align-items:center;gap:11px;font-weight:850;font-size:19px}.logo{width:42px;height:42px;border-radius:12px;background:#1677ff;color:#fff;display:grid;place-items:center;font-weight:850}.nav a,.links a{color:#475467;text-decoration:none}.hero,.section{background:#fff;border:1px solid #e4e7ec;border-radius:20px;box-shadow:0 18px 48px rgba(15,23,42,.06)}.hero{padding:52px 42px;text-align:center}.badge{display:inline-block;background:#ecfdf3;color:#067647;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:800}.hero h1{font-size:42px;line-height:1.12;margin:18px auto 14px;max-width:780px}.hero p{max-width:760px;margin:auto;color:#667085;font-size:17px}.section{padding:34px;margin-top:22px}.section h2{text-align:center;margin:0 0 10px;font-size:27px}.lead{text-align:center;color:#667085;max-width:760px;margin:0 auto 25px}.features,.plans{display:grid;gap:15px}.features{grid-template-columns:repeat(3,1fr)}.feature,.plan{border:1px solid #e4e7ec;border-radius:15px;padding:21px}.feature strong,.plan strong{font-size:18px}.feature p,.plan p{color:#667085;font-size:14px;margin:7px 0 0}.plans{grid-template-columns:repeat(3,1fr)}.price{font-size:29px;font-weight:850;margin:9px 0 3px}.price span{font-size:14px;font-weight:500;color:#667085}.plan ul{padding-left:19px;color:#475467;font-size:14px}.checkout{max-width:760px;margin:22px auto 0;padding:15px;border-radius:11px;background:#f8fafc;text-align:center;color:#475467;font-size:14px}.checkout.error{background:#fef3f2;color:#b42318}.checkout.success{background:#ecfdf3;color:#067647}.notice{text-align:center;color:#667085;font-size:13px;margin-top:22px}.footer{text-align:center;color:#667085;font-size:13px;margin-top:28px}.links{margin-bottom:9px}.links a{margin:0 9px;text-decoration:underline}.contact{margin-top:8px}.contact a{color:#1677ff}.fine{font-size:12px;color:#98a2b3;margin-top:8px}@media(max-width:760px){.features,.plans{grid-template-columns:1fr}.hero{padding:38px 22px}.hero h1{font-size:32px}.section{padding:26px 20px}.nav{align-items:flex-start;gap:15px;flex-direction:column}}
+</style>
 </head>
-<body>
-<div class="container"><div class="card">
-  <div class="logo">SR</div><h1>Sales Research Pro</h1>
-  <div class="subtitle">Research marketplace sales activity faster with structured sold-item analysis, purchase-history checks and exportable results.</div>
-  <div class="production">SECURE PAYMENT</div>
-  <div id="status">Preparing secure checkout...</div>
-
-  <section class="about" id="product-info">
-    <h2>Plans</h2>
-    <p>Sales Research Pro is a research tool for marketplace sellers. Choose a monthly plan based on the number of scans you need.</p>
-    <div class="plans">
-      <div class="plan"><strong>Starter</strong><div class="price">$9.99 <span>/ month</span></div><span>50 scans per billing period</span></div>
-      <div class="plan"><strong>Pro</strong><div class="price">$19.99 <span>/ month</span></div><span>500 scans per billing period</span></div>
-      <div class="plan"><strong>Business</strong><div class="price">$39.99 <span>/ month</span></div><span>2,000 scans per billing period</span></div>
-    </div>
-  </section>
-
-  <div class="security">Payments are securely processed by Paddle, our Merchant of Record.</div>
-  <footer class="footer">
-    <a href="./terms/">Terms of Service</a> •
-    <a href="./privacy/">Privacy Policy</a> •
-    <a href="./refund/">Refund Policy</a>
-    <p>Sales Research Pro is operated by Andaç Taşdemir · Support: <a href="mailto:support@salesresearchpro.com">support@salesresearchpro.com</a></p>
-  </footer>
-</div></div>
-
+<body><main class="wrap">
+<nav class="nav"><div class="brand"><div class="logo">SR</div>Sales Research Pro</div><a href="mailto:support@salesresearchpro.com">Support</a></nav>
+<section class="hero"><span class="badge">MARKETPLACE RESEARCH SOFTWARE</span><h1>Research marketplace sales activity faster</h1><p>Sales Research Pro is a subscription software tool for online marketplace sellers. It helps users analyze publicly available sold-listing activity, review sales history across stores, apply research criteria and organize product opportunities more efficiently.</p></section>
+<section class="section"><h2>What you get</h2><p class="lead">A focused research workflow designed to reduce repetitive marketplace research and make qualifying products easier to review.</p><div class="features"><div class="feature"><strong>Multi-store research</strong><p>Research sales activity across multiple seller stores and review qualifying results in one workflow.</p></div><div class="feature"><strong>Sales-history analysis</strong><p>Review public sold-listing history and use configurable criteria to identify products that match your research rules.</p></div><div class="feature"><strong>Organized results</strong><p>Open and review qualifying product results efficiently while your account tracks plan usage and scan allowance.</p></div></div></section>
+<section class="section" id="plans"><h2>Monthly plans</h2><p class="lead">Choose a plan based on your research volume. Subscriptions renew monthly until cancelled.</p><div class="plans"><div class="plan"><strong>Starter</strong><div class="price">$9.99 <span>/ month</span></div><ul><li>50 scans per billing period</li><li>Core product-research workflow</li><li>Subscription management</li></ul></div><div class="plan"><strong>Pro</strong><div class="price">$19.99 <span>/ month</span></div><ul><li>500 scans per billing period</li><li>Higher research capacity</li><li>Subscription management</li></ul></div><div class="plan"><strong>Business</strong><div class="price">$39.99 <span>/ month</span></div><ul><li>2,000 scans per billing period</li><li>High-volume research capacity</li><li>Subscription management</li></ul></div></div><div id="status" class="checkout">Checkout page ready. Start a purchase from the Sales Research Pro extension.</div><div class="notice">Payments, billing and applicable taxes are securely handled by Paddle, our Merchant of Record.</div></section>
+<footer class="footer"><div class="links"><a href="./terms/">Terms of Service</a><a href="./privacy/">Privacy Policy</a><a href="./refund/">Refund Policy</a></div><div class="contact">Operated by Andaç Taşdemir · <a href="mailto:support@salesresearchpro.com">support@salesresearchpro.com</a></div><div class="fine">Sales Research Pro is an independent research service and is not affiliated with, endorsed by or sponsored by eBay or other marketplaces.</div></footer>
+</main>
 <script>
-(async function () {
-  const status = document.getElementById("status");
-  function showError(message){status.className="error";status.textContent=message;}
-  function showSuccess(message){status.className="success";status.textContent=message;}
-  try {
-    Paddle.Initialize({
-      token:"live_8c5025fea9a82b27646ea5afe92",
-      eventCallback:function(event){
-        console.log("Paddle event:",event);
-        if(event && event.name==="checkout.completed"){
-          showSuccess("Payment completed successfully. You can return to Sales Research Pro and press Refresh.");
-        }
-        if(event && event.name==="checkout.closed"){
-          status.className="";
-          status.textContent="Checkout closed. You can return to the extension or try again.";
-        }
-      }
-    });
-    const params=new URLSearchParams(window.location.search);
-    const transactionId=params.get("_ptxn");
-    if(!transactionId){
-      status.textContent="Checkout page is ready. Please start a purchase from the Sales Research Pro extension.";
-      return;
-    }
-    if(!transactionId.startsWith("txn_")) throw new Error("Invalid Paddle transaction ID.");
-    status.textContent="Opening Paddle secure checkout...";
-    Paddle.Checkout.open({
-      transactionId:transactionId,
-      settings:{displayMode:"overlay",theme:"light",locale:"en",allowLogout:false}
-    });
-    status.textContent="Complete your payment in the Paddle checkout window.";
-  } catch(error) {
-    console.error("Sales Research Pro checkout error:",error);
-    showError(error && error.message ? error.message : "Unable to open Paddle checkout.");
-  }
-})();
-</script>
-</body></html>
+(function(){const status=document.getElementById("status");function error(m){status.className="checkout error";status.textContent=m}function success(m){status.className="checkout success";status.textContent=m}try{Paddle.Initialize({token:"live_8c5025fea9a82b27646ea5afe92",eventCallback:function(e){console.log("Paddle event:",e);if(e&&e.name==="checkout.completed")success("Payment completed successfully. Return to Sales Research Pro and refresh your account.");if(e&&e.name==="checkout.closed"){status.className="checkout";status.textContent="Checkout closed. You can return to the extension or try again."}}});const id=new URLSearchParams(location.search).get("_ptxn");if(!id)return;if(!id.startsWith("txn_"))throw new Error("Invalid Paddle transaction ID.");status.textContent="Opening Paddle secure checkout...";Paddle.Checkout.open({transactionId:id,settings:{displayMode:"overlay",theme:"light",locale:"en",allowLogout:false}});status.textContent="Complete your payment in the secure Paddle checkout window."}catch(e){console.error("Checkout error:",e);error(e&&e.message?e.message:"Unable to open Paddle checkout.")}})();
+</script></body></html>
